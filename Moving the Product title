@@ -1,0 +1,14 @@
+/*********** Moving and removing the existing product title to the top of the product page ************/
+
+function move_product_title_above_page() {
+    if ( is_product() ) {
+        global $post;
+        echo '<h1 class="custom-product-title">' . get_the_title($post->ID) . '</h1>';
+    }
+}
+
+// Remove default title from single product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+
+// Add title to the top of the page
+add_action( 'woocommerce_before_main_content', 'move_product_title_above_page', 5 );
