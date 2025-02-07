@@ -1,4 +1,4 @@
-/********** Add the below code in the functions.php to "add the Product Category title and Category Image" in the CATEGORY PAGE **********/
+/********** Add the below code in the functions.php to "add the Product Category title and Category Image" in the CATEGORY PAGE ***********/
 
 
 function custom_category_header() {
