@@ -1,0 +1,9 @@
+/*********** Moving the Product price after the cart/book button in Single product page  **************/
+*************ADD in functions.php *******
+
+
+function move_price_after_book_now() {
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 31);
+}
+add_action('init', 'move_price_after_book_now');
