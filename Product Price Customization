@@ -1,0 +1,7 @@
+/************ Changing the Product price format / Adding the text along with product price *********/
+
+
+function custom_woocommerce_price_html( $price, $product ) {
+    return 'From ' . $price . ' per day';
+}
+add_filter( 'woocommerce_get_price_html', 'custom_woocommerce_price_html', 10, 2 );
