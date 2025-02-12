@@ -1,0 +1,11 @@
+/*************** Adding some deposit to the actual price dudring checkout  ***************************/
+
+function add_security_deposit_fee($cart) {
+    if (is_admin() && !defined('DOING_AJAX')) {
+        return;
+    }
+
+    $deposit_amount = 100; // Set bond amount
+    $cart->add_fee('Security Deposit', $deposit_amount, false);
+}
+add_action('woocommerce_cart_calculate_fees', 'add_security_deposit_fee');
